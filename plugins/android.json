@@ -1,0 +1,30 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "res/xml/config.xml": {
+            "/*": {
+                "<feature name=\"Camera\"><param name=\"android-package\" value=\"com.tuxpan.foregroundcameragalleryplugin.ForegroundCameraLauncher\" /></feature>": 1
+            }
+        },
+        "AndroidManifest.xml": {
+            "/*": {
+                "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />": 1,
+                "<uses-permission android:name=\"android.permission.CAMERA\" />": 1,
+                "<uses-feature android:name=\"android.hardware.camera.autofocus\" android:required=\"false\" />": 1
+            },
+            "/manifest/application": {
+                "<activity android:label=\"ForegroundCameraPlugin\" android:name=\"com.tuxpan.foregroundcameragalleryplugin.CameraActivity\" android:screenOrientation=\"portrait\" android:theme=\"@android:style/Theme.NoTitleBar.Fullscreen\" />": 1,
+                "<activity android:label=\"Gallery\" android:name=\"com.tuxpan.foregroundcameragalleryplugin.GalleryActivity\" android:screenOrientation=\"portrait\" />": 1
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.tuxpan.foregroundcameragalleryplugin": {
+            "PACKAGE_NAME": "br.com.openedu"
+        }
+    },
+    "dependent_plugins": {}
+}

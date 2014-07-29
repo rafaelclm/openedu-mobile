@@ -1,0 +1,9 @@
+# view AndroidManifest.xml #generated:6
+-keep class br.com.openedu.OpenEdu { <init>(...); }
+
+# view AndroidManifest.xml #generated:12
+-keep class com.tuxpan.foregroundcameragalleryplugin.CameraActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:13
+-keep class com.tuxpan.foregroundcameragalleryplugin.GalleryActivity { <init>(...); }
+

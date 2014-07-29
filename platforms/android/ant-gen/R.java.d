@@ -1,0 +1,21 @@
+C:\Users\Rafael\Desktop\Others\OpenEdu\platforms\android\ant-gen\br\com\openedu\R.java \
+ : C:\Users\Rafael\Desktop\Others\OpenEdu\platforms\android\res\drawable\icon.png \
+C:\Users\Rafael\Desktop\Others\OpenEdu\platforms\android\res\drawable-hdpi\icon.png \
+C:\Users\Rafael\Desktop\Others\OpenEdu\platforms\android\res\drawable-ldpi\icon.png \
+C:\Users\Rafael\Desktop\Others\OpenEdu\platforms\android\res\drawable-mdpi\icon.png \
+C:\Users\Rafael\Desktop\Others\OpenEdu\platforms\android\res\drawable-xhdpi\icon.png \
+C:\Users\Rafael\Desktop\Others\OpenEdu\platforms\android\res\layout\foregroundcameraplugin.xml \
+C:\Users\Rafael\Desktop\Others\OpenEdu\platforms\android\res\layout\gallery.xml \
+C:\Users\Rafael\Desktop\Others\OpenEdu\platforms\android\res\layout-v10\foregroundcameraplugin.xml \
+C:\Users\Rafael\Desktop\Others\OpenEdu\platforms\android\res\layout-v11\foregroundcameraplugin.xml \
+C:\Users\Rafael\Desktop\Others\OpenEdu\platforms\android\res\layout-v12\foregroundcameraplugin.xml \
+C:\Users\Rafael\Desktop\Others\OpenEdu\platforms\android\res\layout-v13\foregroundcameraplugin.xml \
+C:\Users\Rafael\Desktop\Others\OpenEdu\platforms\android\res\layout-v9\foregroundcameraplugin.xml \
+C:\Users\Rafael\Desktop\Others\OpenEdu\platforms\android\res\values\strings.xml \
+C:\Users\Rafael\Desktop\Others\OpenEdu\platforms\android\res\xml\config.xml \
+C:\Users\Rafael\Desktop\Others\OpenEdu\platforms\android\ant-build\res\drawable\icon.png \
+C:\Users\Rafael\Desktop\Others\OpenEdu\platforms\android\ant-build\res\drawable-hdpi\icon.png \
+C:\Users\Rafael\Desktop\Others\OpenEdu\platforms\android\ant-build\res\drawable-ldpi\icon.png \
+C:\Users\Rafael\Desktop\Others\OpenEdu\platforms\android\ant-build\res\drawable-mdpi\icon.png \
+C:\Users\Rafael\Desktop\Others\OpenEdu\platforms\android\ant-build\res\drawable-xhdpi\icon.png \
+C:\Users\Rafael\Desktop\Others\OpenEdu\platforms\android\ant-build\AndroidManifest.xml \
