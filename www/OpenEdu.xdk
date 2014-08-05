@@ -1,0 +1,181 @@
+{
+  "project": {
+    "projectSettingsVersion": "1.1",
+    "creationData": {
+      "type": "Import",
+      "src": "",
+      "projectGuid": "a9ef49d1-b588-47e1-83ae-4de181a408a5",
+      "lastModifiedDate": 1406921488365,
+      "creationDate": 1406718723164
+    },
+    "sourceDirectory": "",
+    "startFile": "index.html",
+    "projectFiles": {},
+    "projectDirectories": {},
+    "libraries": [
+      {
+        "name": "Cordova",
+        "version": "2.9.0",
+        "data": {
+          "default": true
+        }
+      },
+      {
+        "name": "intelXDK",
+        "version": "4.0.0",
+        "data": {
+          "default": true
+        }
+      }
+    ],
+    "serviceMethods": [],
+    "cordovaPluginsDirectory": "plugins",
+    "cordovaPlugins": [
+      {
+        "id": "org.apache.cordova.network-information",
+        "version": "0.2.8",
+        "selectedState": "Auto",
+        "data": {},
+        "paramvals": {}
+      },
+      {
+        "id": "org.apache.cordova.device",
+        "version": "0.2.5",
+        "selectedState": "Auto",
+        "data": {},
+        "paramvals": {}
+      },
+      {
+        "id": "org.apache.cordova.battery-status",
+        "version": "0.2.5",
+        "selectedState": "Auto",
+        "data": {},
+        "paramvals": {}
+      },
+      {
+        "id": "org.apache.cordova.splashscreen",
+        "version": "0.2.5",
+        "selectedState": "Auto",
+        "data": {},
+        "paramvals": {}
+      },
+      {
+        "id": "intel.xdk.base",
+        "selectedState": "Auto",
+        "data": {},
+        "paramvals": {}
+      },
+      {
+        "id": "org.apache.cordova.camera",
+        "version": "0.2.9",
+        "selectedState": "Included",
+        "data": {},
+        "paramvals": {}
+      },
+      {
+        "id": "org.apache.cordova.file",
+        "version": "0.2.5",
+        "selectedState": "Included",
+        "data": {},
+        "paramvals": {}
+      }
+    ],
+    "buildConfigurations": {
+      "Android": {
+        "platform_": "android",
+        "name_": "Android",
+        "preferences_": {
+          "Fullscreen": true,
+          "android-minSdkVersion": "15",
+          "android-targetedSdkVersion": "19"
+        },
+        "isActive_": true,
+        "appName_": "OpenEdu",
+        "appID_": "br.com.openedu",
+        "appAccess_": "*",
+        "icons_": [],
+        "splashes_": [],
+        "iosProvs_": [],
+        "addlPermissions_": "",
+        "excludedLibraries_": "",
+        "cordovaCLIVersion_": "3.3",
+        "crosswalkVersion_": "stable",
+        "appVersion_": "1.0.0",
+        "runtime_": "Cordova 3.x",
+        "appAuthor_": "Rafael França"
+      },
+      "Android-Crosswalk": {
+        "platform_": "android",
+        "name_": "Android-Crosswalk",
+        "preferences_": {},
+        "isActive_": true,
+        "appName_": "OpenEdu",
+        "appID_": "not.yet.specified",
+        "appAccess_": "*",
+        "icons_": [],
+        "splashes_": [],
+        "iosProvs_": [],
+        "addlPermissions_": "",
+        "excludedLibraries_": "",
+        "cordovaCLIVersion_": "3.3",
+        "crosswalkVersion_": "stable",
+        "appVersion_": "1.0.0",
+        "runtime_": "Crosswalk with Cordova 3.x"
+      },
+      "iOS": {
+        "platform_": "ios",
+        "name_": "iOS",
+        "preferences_": {},
+        "isActive_": true,
+        "appName_": "OpenEdu",
+        "appID_": "not.yet.specified",
+        "appAccess_": "*",
+        "icons_": [],
+        "splashes_": [],
+        "iosProvs_": [],
+        "addlPermissions_": "",
+        "excludedLibraries_": "",
+        "cordovaCLIVersion_": "3.3",
+        "crosswalkVersion_": "stable",
+        "appVersion_": "1.0.0",
+        "runtime_": "Cordova 3.x"
+      },
+      "Windows8": {
+        "platform_": "windows8",
+        "name_": "Windows8",
+        "preferences_": {},
+        "isActive_": true,
+        "appName_": "OpenEdu",
+        "appID_": "not.yet.specified",
+        "appAccess_": "*",
+        "icons_": [],
+        "splashes_": [],
+        "iosProvs_": [],
+        "addlPermissions_": "",
+        "excludedLibraries_": "",
+        "cordovaCLIVersion_": "3.3",
+        "crosswalkVersion_": "stable",
+        "appVersion_": "1.0.0.0",
+        "runtime_": "Cordova 3.x"
+      },
+      "WindowsPhone8": {
+        "platform_": "wp8",
+        "name_": "WindowsPhone8",
+        "preferences_": {},
+        "isActive_": true,
+        "appName_": "OpenEdu",
+        "appID_": "not.yet.specified",
+        "appAccess_": "*",
+        "icons_": [],
+        "splashes_": [],
+        "iosProvs_": [],
+        "addlPermissions_": "",
+        "excludedLibraries_": "",
+        "cordovaCLIVersion_": "3.3",
+        "crosswalkVersion_": "stable",
+        "appVersion_": "1.0.0.0",
+        "runtime_": "Cordova 3.x"
+      }
+    }
+  }
+}

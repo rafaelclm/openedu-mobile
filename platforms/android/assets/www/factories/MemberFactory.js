@@ -36,6 +36,12 @@ openedu.factory("MemberFactory", ['HTTP', 'HttpConfig', function MemberFactory(H
             return HttpConfig.getBaseURI().concat('member/photo/')
                     .concat(sessionId).concat('/').concat(imageId);
         };
+        
+        MemberFactory.update = function(params){
+            var UPDATE = HttpConfig.getBaseURI().concat('member/me/').concat(params.sessionId);
+            params.service = UPDATE;
+            HTTP.put(params);
+        };
 
         return MemberFactory;
 

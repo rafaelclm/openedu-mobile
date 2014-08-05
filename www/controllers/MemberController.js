@@ -4,14 +4,7 @@ openedu.controller('MemberController', ['$scope', '$rootScope', 'MemberFactory',
         this.photo = {};
         $scope.isChoosePhotoCollapsed = true;
         $scope.session = angular.fromJson(localStorage.session);
-        $rootScope.profileImageIsLoaded = false;
         $scope.profileImage = MemberFactory.getPhoto($scope.member.image, $scope.session.sessionId);
-
-        this.logOut = function () {
-            localStorage.removeItem('session');
-            localStorage.removeItem('member');
-            $scope.template = $scope.Templates.HOME;
-        };
 
         this.capturePhoto = function () {
             // Take picture using device camera and retrieve image as base64-encoded string
@@ -21,7 +14,7 @@ openedu.controller('MemberController', ['$scope', '$rootScope', 'MemberFactory',
                 targetWidth: 800,
                 targetHeight: 800
             });
-        }
+        };
 
         this.getPhoto = function () {
             // Retrieve image file location from specified source
@@ -32,11 +25,30 @@ openedu.controller('MemberController', ['$scope', '$rootScope', 'MemberFactory',
                 targetWidth: 800,
                 targetHeight: 800
             });
-        }
+        };
+
+        this.saveMe = function () {
+
+            $rootScope.inProgress = true;
+
+            var params = {
+                data: $scope.member,
+                sessionId: $scope.session.sessionId,
+                success: function (result) {
+                    $scope.editing = false;
+                    $rootScope.inProgress = false;
+                },
+                error: function () {
+                    $rootScope.inProgress = false;
+                }
+            };
+
+            MemberFactory.update(params);
+
+        };
 
         function onPhotoDataSuccess(imageData) {
 
-            $rootScope.profileImageIsLoaded = false;
             $scope.isChoosePhotoCollapsed = true;
             $scope.profileImage = "images/loading.gif";
 
@@ -47,7 +59,6 @@ openedu.controller('MemberController', ['$scope', '$rootScope', 'MemberFactory',
                     if (result.code === Codes.MEMBER_UPDATED) {
                         $scope.member = result.entity;
                         localStorage.member = angular.toJson($scope.member);
-                        $rootScope.profileImageIsLoaded = false;
                         $scope.profileImage = MemberFactory
                             .getPhoto($scope.member.image, $scope.session.sessionId);
                     }
@@ -62,9 +73,8 @@ openedu.controller('MemberController', ['$scope', '$rootScope', 'MemberFactory',
         }
 
         function onFail(message) {
-            alert('Failed because: ' + message);
+            console('Failed because: ' + message);
         }
-
     }
 
 ]);

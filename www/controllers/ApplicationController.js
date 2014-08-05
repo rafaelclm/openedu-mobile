@@ -1,8 +1,19 @@
-var ApplicationCotroller = openedu.controller('ApplicationController', ['$scope', 'Templates', 'MemberFactory', 'Codes',
-    function ApplicationController($scope, Templates, MemberFactory, Codes) {
+var ApplicationCotroller = openedu.controller('ApplicationController', ['$scope', '$rootScope', 'Templates', 'MemberFactory', 'Codes',
+    function ApplicationController($scope, $rootScope, Templates, MemberFactory, Codes) {
 
         $scope.Templates = Templates;
-        $scope.template;
+        $rootScope.template;
+
+        setTimeout(function() {
+            console.log(window.paths);
+            $scope.$apply(function() {
+                $scope.entries = window.paths;
+            });
+        }, 5000);
+
+        moment.lang('pt-BR');
+        $rootScope.moment = moment;
+
         this.memberSignIn = {};
         this.memberSignUp = {};
         this.birthDate = {
@@ -11,7 +22,7 @@ var ApplicationCotroller = openedu.controller('ApplicationController', ['$scope'
             year: null
         };
 
-        this.inProgress = false;
+        $rootScope.inProgress = false;
 
         if (localStorage.session !== undefined) {
 
@@ -19,34 +30,34 @@ var ApplicationCotroller = openedu.controller('ApplicationController', ['$scope'
             getMe(session.sessionId);
 
         } else {
-            $scope.template = Templates.HOME;
+            $rootScope.template = Templates.HOME;
         }
 
-        this.signIn = function () {
+        this.signIn = function() {
 
-            this.inProgress = true;
+            $rootScope.inProgress = true;
 
             var params = {
                 controller: this,
                 data: this.memberSignIn,
-                success: function (result) {
+                success: function(result) {
 
                     if (result.code === Codes.SESSION_CREATED) {
 
                         var session = result.entity;
                         localStorage.session = angular.toJson(session);
                         getMe(session.sessionId);
-                        $scope.template = Templates.USER_AREA_HOME;
+                        $rootScope.template = Templates.USER_AREA_HOME;
 
                     } else if (result.code === Codes.NOT_EXISTS_MEMBER) {
 
                     }
 
-                    this.controller.inProgress = false;
+                    $rootScope.inProgress = false;
 
                 },
-                error: function () {
-                    this.controller.inProgress = false;
+                error: function() {
+                    $rootScope.inProgress = false;
                 }
             };
 
@@ -54,23 +65,29 @@ var ApplicationCotroller = openedu.controller('ApplicationController', ['$scope'
 
         };
 
-        this.signUp = function () {
+        this.signUp = function() {
+            
+            $rootScope.inProgress = true;
+            
             var params = {
                 controller: this,
                 data: this.memberSignUp,
-                success: function (result) {
+                success: function(result) {
 
                     if (result.code === Codes.SESSION_CREATED) {
 
                         localStorage.session = angular.toJson(result.entity);
-                        $scope.template = Templates.USER_AREA_HOME;
+                        $rootScope.template = Templates.USER_AREA_HOME;
 
                     } else if (result.code === Codes.NOT_EXISTS_MEMBER) {
 
                     }
+                    
+                    $rootScope.inProgress = false;
+                    
                 },
-                error: function () {
-
+                error: function() {
+                    $rootScope.inProgress = false;
                 }
             };
 
@@ -80,21 +97,21 @@ var ApplicationCotroller = openedu.controller('ApplicationController', ['$scope'
         function getMe(sessionId) {
             var params = {
                 sessionId: sessionId,
-                success: function (result) {
+                success: function(result) {
 
                     if (result.code === Codes.EXISTS_SESSION) {
 
                         $scope.member = result.entity;
                         $scope.profileImage = MemberFactory.getPhoto($scope.member.image, this.sessionId);
-                        $scope.template = Templates.USER_AREA_HOME;
+                        $rootScope.template = Templates.USER_AREA_HOME;
 
                     } else if (result.code === Codes.NOT_EXISTS_SESSION) {
-                        $scope.template = Templates.HOME;
+                        $rootScope.template = Templates.HOME;
                     }
 
                 },
-                error: function () {
-                    $scope.template = Templates.HOME;
+                error: function() {
+                    $rootScope.template = Templates.HOME;
                 }
             };
 

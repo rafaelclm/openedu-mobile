@@ -1,0 +1,59 @@
+<div id="tutorial" ng-controller="TutorialController as tutorialController">
+    <div id="panel-buttons" class="well well-sm boxshadow">
+        <a href=""><i class="icon-camera"></i></a>
+        <a href=""><i class="icon-gallery"></i></a>
+        <a href=""><i class="icon32-video"></i></a>
+    </div>
+    <div id="tutorialImage" class="well well-sm boxshadow" ng-show="tutorialController.hasImage">
+        <img style="z-index: 0;" ng-src="{{profileImage}}" imageonload />
+    </div>
+    <input type="text" class="form-control boxshadow" placeholder="Título do Tutorial" />
+    <hr/>
+    <div style="background: white" class="boxshadow">
+        <div class="summernote boxshadow"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('.summernote').summernote({
+        toolbar: []
+    });
+</script>
+<style type="text/css">
+    #tutorialImage {
+        width: 300px !important;
+        min-height: 300px !important;
+        margin: 0px auto;
+        padding: 10px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border: 4px solid white;
+    }
+    #tutorial {
+        padding: 10px;
+    }
+    #tutorial i {
+        cursor: pointer;
+    }
+    #panel-buttons a {
+        margin-right: 10px;
+    }
+    .btn-file {
+        position: relative;
+        overflow: hidden;
+    }
+    .btn-file input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 999px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+    }
+</style>
